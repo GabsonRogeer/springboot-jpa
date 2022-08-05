@@ -1,5 +1,6 @@
 package com.portela.springjpa.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.portela.springjpa.entities.pk.OrderItemPK;
 
 import javax.persistence.EmbeddedId;
@@ -14,7 +15,7 @@ import java.io.Serializable;
 public class OrderItem implements Serializable {
 
     @EmbeddedId
-    private OrderItemPK id;
+    private OrderItemPK id = new OrderItemPK();
     private Integer quantity;
     private Double price;
 
@@ -30,6 +31,7 @@ public class OrderItem implements Serializable {
         this.price = price;
     }
 
+    @JsonIgnore
     public Order gerOrder(){
         return id.getOrder();
     }
