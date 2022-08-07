@@ -32,7 +32,7 @@ public class OrderItem implements Serializable {
     }
 
     @JsonIgnore
-    public Order gerOrder(){
+    public Order getOrder(){
         return id.getOrder();
     }
 
@@ -40,7 +40,8 @@ public class OrderItem implements Serializable {
         id.setOrder(order);
     }
 
-    public Product gerProduct(){
+
+    public Product getProduct(){
         return id.getProduct();
     }
 
